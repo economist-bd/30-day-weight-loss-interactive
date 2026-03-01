@@ -282,5 +282,74 @@
   loadDay(1); // শুরুতে দিন ১ লোড
 </script>
 
+  <!-- Floating Action Button - যেকোনো পেজে যোগ করার জন্য -->
+<div class="fab-container">
+  <button class="fab" id="fabButton" aria-label="অ্যাকশন করুন">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+  </button>
+</div>
+
+<style>
+  .fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+  }
+
+  .fab {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .fab:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.6);
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+  }
+
+  .fab:active {
+    transform: scale(0.95);
+  }
+
+  /* মোবাইলে ছোট করে দেখানো */
+  @media (max-width: 600px) {
+    .fab-container {
+      bottom: 20px;
+      right: 20px;
+    }
+    .fab {
+      width: 56px;
+      height: 56px;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('fabButton').addEventListener('click', function() {
+    // এখানে আপনি যা চান তা করুন — উদাহরণ:
+    alert("আজকের ওজন কমানোর টিপ: প্রতিদিন ১০,০০০ স্টেপ হাঁটুন! 💪\n\nআরও কিছু যোগ করতে চান?");
+
+    // অথবা অন্য কোনো অ্যাকশন:
+    // window.scrollTo({ top: 0, behavior: 'smooth' });  // উপরে স্ক্রল
+    // বা নতুন টিপ যোগের ফর্ম দেখানো
+    // বা bookmark/save ফিচার
+  });
+</script>
+
 </body>
 </html>
